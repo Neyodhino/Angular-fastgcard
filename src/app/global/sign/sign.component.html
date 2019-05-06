@@ -1,0 +1,95 @@
+<div class="overall">
+<div class="header">
+    <div class="brand">
+        <p style="font-family: 'calibri'; font-size: 30px; font-weight: bolder;">Fastgcard</p>
+    </div>
+    <div class="home_link">
+        <p>
+            Send me back to the
+            <a
+                href="#"
+                routerLink="/"
+                style="font-family: 'calibri';"
+            >
+                home page
+            </a> 
+        </p>
+    </div>
+</div>
+
+<section class="content">
+    <p class="member">Member Sign In</p>
+        <div class="login">
+            <a
+                href="#"
+                class="fb-social-login"
+                (click)="google()"
+            >
+                <div class="google">
+                    <img
+                        class="google-img"
+                        src="https://s3.amazonaws.com/new-cardcash-images/website/Google__G__Logo.svg"
+                    >
+                    <p style="font-family: 'calibri;'">Continue with Google</p>
+                </div>
+            </a>
+            <div class="newmm">
+                <h5>or</h5>
+            </div>
+            <form
+                class="form"
+                [formGroup]="loginForm"
+            >
+                <div>
+                    <input
+                        type="email"
+                        class="form_control"
+                        placeholder="Your Email"
+                        required
+                        name="email"
+                        formControlName="email"
+                    >
+                    <label class="form_label">Your Email Address</label>
+                </div>
+
+                <div>
+                    <input
+                        type="password"
+                        class="form_control"
+                        placeholder="Your Password"
+                        required
+                        name="password"
+                        formControlName="password"
+                    >
+                    <label class="form_label">Your Password</label>
+                </div>
+                <ng-container *ngIf="!click; then thenTemplate; else elseTemplate"></ng-container>
+                <ng-template #thenTemplate>
+                    <button
+                        type="submit"
+                        (click)="login(loginForm.value)"
+                        [disabled]='!loginForm.valid'
+                    >
+                        Sign In
+                    </button>
+                </ng-template>
+            </form>
+            <p style="width: 70%; margin: 0 auto; color: gray; font-size: 15px; 
+            font-family: 'calibri'; margin-top: 10px; margin-bottom: 20px;">
+                By logging in, you agree to the
+            Terms and Conditions and Privacy Policy.
+            </p>
+                <a
+                    routerLink="/change-password" 
+                    style="font-family: 'calibri'; margin-top: 40px; "
+                >
+                    Forgot password?
+                </a>
+        </div>
+</section>
+</div>
+
+<ng-template #elseTemplate>
+    <app-spinner></app-spinner>
+</ng-template>
+ 

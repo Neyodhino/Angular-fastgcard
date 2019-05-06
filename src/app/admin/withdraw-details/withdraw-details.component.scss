@@ -1,0 +1,121 @@
+table{
+    margin-top: 50px;
+    width: 100%;
+    margin: 50px auto;
+}
+
+
+$fonts: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+
+$brand: #0273d4;
+$light-grey: #f6f6f6;
+$dark-grey: #545555;
+$white: #fff;
+  
+  .demo-header {
+    align-items: center;
+    background: $brand;
+    box-shadow: 0 0.1em 1.5em rgba($dark-grey, 0.5);
+    color: $white;
+    display: flex;
+    padding: 1em;
+  }
+  
+    .demo-header__toggle {
+      background: transparent;
+      border: 0.15rem solid $white;
+      border-left: 0;
+      border-right: 0;
+      cursor: pointer;
+      font-size: 0;
+      height: 1.5rem;
+      margin-right: 1rem;
+      position: relative;
+      width: 2rem;
+  
+      &::after {
+        background: $white;
+        content: '';
+        height: 0.15rem;
+        left: 0;
+        margin-top: -0.075rem;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+      }
+    }
+
+    ng-sidebar-container{
+        height: 100vh;
+    }
+  
+  .demo-sidebar {
+    background: black !important;
+    color: white;
+    padding: 2em 1em;
+  
+    &.ng-sidebar--opened.ng-sidebar--over {
+      box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+    }
+  }
+  
+  .demo-contents {
+    margin-top: 20px;
+    padding: 0 2em;
+  }
+  @media only screen and(max-width: 960px){
+    .demo-contents {
+     margin: 0;
+     padding: 0;
+    }
+  }
+
+  :host /deep/ .ng-sidebar{
+      background-color:#262f3d;
+      color: white;
+      padding-left: 20px;
+      padding-top: 10px;
+      width: 300px;
+
+      a{
+        margin-top: 20px;
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+      }
+      a.active{
+        background-color: #4CAF50;
+        color: white;
+      }
+  }
+  
+  :host /deep/ .ng-sidebar  a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  hr{
+      width: 90%;
+      margin: 0 auto;
+      border: .3px solid #404454;
+      margin-top: 10px;
+  }
+  li{
+    list-style: none;
+    margin-bottom: 15px;
+  }
+  .card-body{
+    padding-left: 5px !important;
+    padding-right: 2px;
+  }
+  .card-title{
+    font-size: 15px;  
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  mat-icon{
+    color: #fff;
+    margin-right: 5px;
+  }

@@ -1,0 +1,300 @@
+<header class="header">
+    <div class="navigation">
+        <div class="brand_harmburger">
+            <div class="harmburger-btn">
+                <i class="fa fa-bars" aria-hidden="true" [hidden]="isHidden" (click)="toggleMenu()"></i>
+                <i class="fa fa-times" aria-hidden="true" [hidden]="!isHidden" (click)="toggleMenu()"></i>
+            </div>
+            <div class="brand">
+                <p class="brand__text">Fastgcard</p>
+            </div> 
+        </div>
+        <nav class="desktop-nav">
+            <ul>
+                <li>
+                    <a routerLink="/home">Home</a>
+                </li>
+                
+                <li>
+                   <a href="#contact">Contact</a>
+                 </li>
+                 
+                <li>
+                    <a routerLink="/sign_in">Login</a>
+                </li>
+                
+                <li>
+                     <a routerLink="/sign_up">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div #mobilenav class="mobile-nav" [ngClass]="{'fadeInDownBig': true, animated: true}">
+        <nav>
+             <ul>
+               <li>
+                   <a routerLink="/home">Home</a>
+                </li>    
+                   <li>
+                     <a href="#contact">Contact</a>
+                    </li>           
+                   <li>
+                     <a routerLink="/sign_in">Login</a> 
+                    </li>           
+                   <li>
+                      <a routerLink="/register">Register</a>
+                  </li>
+                </ul>
+        </nav>
+    </div>
+    <div class="text-box">
+        <h1 class="heading-primary">
+            <div class="heading-primary--main">FASTGCARD</div>
+            <div class="heading-primary--sub">No. 1 Gift Cards Buyer In The World</div>
+        </h1>
+        <a
+            href
+            routerLink="/sign_up"
+            class="button button-white button-animated"
+        >
+            sell your giftcard
+        </a>
+    </div>
+</header>
+
+
+<section class="process">
+    <h1 class="heading-main">our process</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p class="process-paragraph">
+                    We are the best when it comes to gift cards trading. And below are the processes to
+          go through to get paid for your gift cards within few minutes. However, Contact Us On Whatsapp at
+          +13178200350
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container process-phase">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="process-icon">
+                    <mat-icon>edit</mat-icon>
+                </div>
+                <h4>Approve Rate</h4>
+                <p>
+                    Tell us the amount you have, we give you our mouth-watering rates. Kindly accept our rates,
+          they are the best.
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="process-icon">
+                    <mat-icon>code</mat-icon>
+                </div>
+                <h4>Upload Gift Card</h4>
+                <p>
+                    Tell us the amount you have, we give you our mouth-watering rates.
+          Kindly accept our rates, they are the best.
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="process-icon">
+                    <mat-icon>payment</mat-icon>
+                </div>
+                <h4>Get Paid</h4>
+                <p>
+                    Just within few minutes, we are done. We send payment fast to your provided payment account
+                </p>
+            </div>
+        </div>
+    </div>
+    <a
+        href="#"
+        routerLink="/sign_up"
+        class="button button-green button-animated"
+        style="margin-top:20px;"
+    >
+        click here to sell giftcard
+    </a>
+</section>
+
+
+
+
+<section class="features">
+    <h1 class="heading-main">Our Promise</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p class="process-paragraph">
+                    Below are some of our never failing promises.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 d-lg-block">
+                <div class="d-flex">
+                    <div class="p-3 align-self-start">
+                        <div class="process-icon">
+                            <mat-icon>payment</mat-icon>
+                        </div>
+                    </div>
+                    <div class="p-3 align-self-end">
+                        <h4>FAST PAYMENT</h4>
+                        <p>
+                            Payment will be paid to your bank immediately your request for withdrawal
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="d-flex">
+                    <div class="p-3 align-self-start">
+                        <div class="process-icon">
+                            <mat-icon>payment</mat-icon>
+                        </div>
+                    </div>
+                    <div class="p-3 align-self-end">
+                        <h4>100% HONESTY</h4>
+                        <p>
+                            We will never MINCE words to vheat you, we will be real with you
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+            <div class="col-lg-6 d-lg-block">
+                <div class="d-flex">
+                    <div class="p-3 align-self-start">
+                        <div class="process-icon">
+                            <mat-icon>payment</mat-icon>
+                        </div>
+                    </div>
+                    <div class="p-3 align-self-end">
+                        <h4>BEST RATES</h4>
+                        <p>
+                            We are direct leaders and not middle ment. We offer the best rates in the industry
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="d-flex">
+                    <div class="p-3 align-self-start">
+                        <div class="process-icon">
+                            <mat-icon>payment</mat-icon>
+                        </div>
+                    </div>
+                    <div class="p-3 align-self-end">
+                        <h4>EASY TRADES</h4>
+                        <p>
+                            All trades are complete in a few minutes without unnecessary verfications. You are safe.
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section
+    class="contact"
+    id="contact"
+>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <h3 id="contact-heading">Contact Us</h3>
+                <p>
+                    E mail: &nbsp; &nbsp;
+                    <span>(support@fastgcard.com)</span>
+                </p>
+                <p>
+                    Whatsapp: &nbsp; &nbsp;
+                    <span>(+13178200350)</span>
+                </p>
+                <a
+                    href="#"
+                    routerLink="/sign_up"
+                    class="button button-green button-animated"
+                    style="margin-top: 20px;"
+                >
+                    sell giftcard now
+                </a>
+            </div>
+
+
+
+
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <form class="form">
+                    <div class="form_group">
+                        <input
+                            type="text"
+                            class="form_control"
+                            placeholder="Your Name"
+                            required
+                            name="name"
+                        >
+                        <label class="form_label">Your Name</label>
+                    </div>
+
+
+
+
+                    <div class="form_group">
+                        <input
+                            type="email"
+                            class="form_control"
+                            placeholder="Your Email"
+                            required
+                            name="email"
+                        >
+                        <label class="form_label">Your Email</label>
+                    </div>
+
+
+
+
+                    <div class="form_group">
+                        <textarea
+                            class="form_control"
+                            placeholder="Your message"
+                            required
+                            name="message"
+                            rows="8"
+                        >
+                        </textarea>
+                        <label class="form_label">Your Message</label>
+                    </div>
+                    <a
+                        href="#"
+                        class="button button-green button-animated"
+                    >
+                        SEND MESSAGE
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

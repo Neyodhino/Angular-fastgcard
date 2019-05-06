@@ -1,0 +1,165 @@
+<app-user-side-bar>
+<section class="process">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <img
+                    src="https://www.afrbtc.com/ui/zheng-biz-web/image/order.png"
+                    style="height: 30px;"
+                    alt="icon"
+                >
+                <p>Check the prices and requirements</p>
+            </div>
+            <div class="col-lg-1">
+                <img
+                    src="https://www.afrbtc.com/ui/zheng-biz-web/image/rightArrow.png"
+                    alt="icon"
+                    style="height: 30px;"
+                >
+            </div>
+            <div class="col-lg-2">
+                <img
+                    src="https://www.afrbtc.com/ui/zheng-biz-web/image/upload.png"
+                    alt="icon"
+                    style="height: 30px;"
+                >
+                <p>Upload Your Itues card</p>
+            </div>
+            <div class="col-lg-1">
+                <img
+                    src="https://www.afrbtc.com/ui/zheng-biz-web/image/rightArrow.png"
+                    alt="icon"
+                    style="height: 30px;"
+                >
+            </div>
+            <div class="col-lg-2">
+                <img
+                    src="https://www.afrbtc.com/ui/zheng-biz-web/image/clock.png"
+                    alt="icon"
+                    style="height: 30px;"
+                >
+                <p>Waiting for verification</p>
+            </div>
+            <div class="col-lg-2">
+                <img
+                    src="https://www.afrbtc.com/ui/zheng-biz-web/image/rightArrow.png"
+                    alt="icon"
+                    style="height: 30px;"
+                >
+            </div>
+            <div class="col-lg-2">
+                <img
+                    src="https://www.afrbtc.com/ui/zheng-biz-web/image/deal.png"
+                    alt="icon"
+                    style="height: 30px;"
+                >
+                <p>Get naira in wallet instantly</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="requirement">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-10 col-md-12">
+                <h3>The requirement of Gift card</h3>
+                <h4>Itunes card:</h4>
+                <p>
+                    1. Clear physical itunes card only, no music or E-code.
+                </p>
+                <p>
+                    2. Every itunes card should be between 1$- 100$ value, card which
+                        over 100$ value (exsingle 150$, single 200$ card, etc) is strictly
+                        forbidden to upload to our website, if we load it, we want pay
+                        your.
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-10 col-md-12">
+                <h4>Amazon card:</h4>
+                <p>1. cash and debit receipt only</p>
+                <p>
+                    2 .One single card cannot more than 200 USD
+                </p>
+                <p>
+                    3. Both Amazon card and receipt need to upload
+                </p>
+                <p>
+                    4. Codes of amazon card must be the same with receipt.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-12">
+                <h2 class="register-header">
+                    <strong style="color: rgb(117, 249, 253);">Basic</strong>
+                    Information
+                </h2>
+                <div
+                    *ngIf="currentFileUpload"
+                    class="progress"
+                >
+                    <div
+                        class="progress-bar progress-bar-info progress-bar-striped"
+                        role="progressbar"
+                        attr.aria-valuenow="{{progress.percentage}}"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        [ngStyle]="{width:progress.percentage+'%'}"
+                    >
+                        {{progress.percentage}}%
+                    </div>
+                </div>
+                <form
+                    class="form"
+                    [formGroup]="uploadForm"
+                >
+                    <div class="form_group">
+                        <select
+                            class="form_control"
+                            formControlName="cardType"
+                        >
+                            <option>-card type-</option>
+                            <option>Itunes Card</option>
+                            <option>Amazon card</option>
+                        </select>
+                    </div>
+                    <div class="form_group">
+                        <input
+                            type="file"
+                            (change)="selectFile($event)"
+                            name="file"
+                        >
+                    </div>
+                    <div class="form_group">
+                        <textarea
+                            class="form_control"
+                            placeholder="User Remark"
+                            required
+                            name="remark"
+                            rows="8"
+                            cols="10"
+                            formControlName="remark"
+                        >
+                        </textarea>
+                        <label class="form_label">User Remark</label>
+                    </div>
+                    <div class="upload">
+                        <button
+                            class="btn btn-success"
+                            (click)="upload(uploadForm.value)"
+                        >
+                            Upload
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</app-user-side-bar>

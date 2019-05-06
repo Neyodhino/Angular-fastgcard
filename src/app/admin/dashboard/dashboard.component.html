@@ -1,0 +1,32 @@
+<app-side-bar>
+<table class="table table-striped table-hover" style="margin-top: 20px;">
+      <thead class="thead-dark">
+        <tr>
+        <th>Ord Number</th>
+        <th>Card Type</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th> </th>
+      </tr>
+      </thead>  
+      <tr *ngFor="let card of list">
+      <td>{{card.id}}</td>
+      <td>{{card.cardType}}</td>
+      <td>{{card.email}}</td>
+      <ng-container *ngIf="card.status; then thenTemplate; else elseTemplate"></ng-container>
+      <ng-template #thenTemplate>
+        <td><p>Response sent</p></td>
+      </ng-template>
+      <ng-template #elseTemplate>
+        <td><p>Not yet confirmed</p></td>
+      </ng-template>
+      <ng-container *ngIf="card.status; then detailsTemplate; else noDetailsTemplate"></ng-container>
+      <ng-template #detailsTemplate>
+        <td></td>
+      </ng-template>
+      <ng-template #noDetailsTemplate>
+        <td><a  [routerLink]="['/admin/cardSaleDetails/'+card.id]" href="" class="btn btn-secondary btn-sm">Details</a></td>
+      </ng-template>
+      </tr>
+    </table>
+  </app-side-bar>

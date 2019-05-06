@@ -1,0 +1,40 @@
+<app-side-bar> 
+<section class="details">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+
+      </div>
+      <div class="col-md-2">
+        <a href="" [routerLink]="['/admin/admin-response/'+id]" class="btn btn-secondary">Send Response</a>
+      </div>
+    </div>
+    <hr>
+    <div class="card">
+      <h3 class="card-header">Client Email: {{cardSale.email}}</h3>
+      <div class="card-block">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <h5>Client ID: {{id}}</h5>
+            </div>
+          </div>
+        </div>
+
+        <ul class="list-group">
+          <li class="list-group-item"><h6>Card Type: </h6> {{cardSale.cardType}}</li>
+          <li class="list-group-item"><h6>Remark:</h6> {{cardSale.remark}}</li>
+          <li class="list-group-item"><h6>Card Image:</h6> <a href="#popup"><img src="{{cardSale.url}}" alt="card image" style="width: 20%; height: 20%;"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="popup" id="popup">
+  <a href="#details" class="popup__close">&times;</a>
+  <div class="popup_content">
+      <img src="{{cardSale.url}}" alt="card image"  alt="carg-image" style="width: 100%; height:100%">
+  </div>
+</section>
+</app-side-bar>

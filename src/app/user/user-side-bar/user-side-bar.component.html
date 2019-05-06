@@ -1,0 +1,57 @@
+<ng-sidebar-container (onBackdropClicked)="_onBackdropClicked()">
+    <ng-sidebar
+        [(opened)]="_opened"
+        [mode]="_MODES[_modeNum]"
+        [keyClose]="_keyClose"
+        [position]="_POSITIONS[_positionNum]"
+        [dock]="_dock"
+        [dockedSize]="'50px'"
+        [autoCollapseHeight]="_autoCollapseHeight"
+        [autoCollapseWidth]="_autoCollapseWidth"
+        [closeOnClickOutside]="_closeOnClickOutside"
+        [closeOnClickBackdrop]="_closeOnClickBackdrop"
+        [showBackdrop]="_showBackdrop"
+        [animate]="_animate"
+        [trapFocus]="_trapFocus"
+        [autoFocus]="_autoFocus"
+        [sidebarClass]="'demo-sidebar'"
+        [ariaLabel]="'My sidebar'"
+        (onOpenStart)="_onOpenStart()"
+        (onOpened)="_onOpened()"
+        (onCloseStart)="_onCloseStart()"
+        (onClosed)="_onClosed()"
+        (onTransitionEnd)="_onTransitionEnd()"
+    >
+        <!-- sidebar content goes here -->
+
+        <h3>Fastgcard</h3>
+        <hr>
+        <div style="margin-top: 15px;">&rarr; Menu</div>
+        <a
+            href="#"
+            [routerLink]="['/user/sell-card']"
+        >
+            Sell Gift Card
+        </a>
+        <a (click)="onWithdraw()">Withdraw</a>
+        <a [routerLink] = "['/user/card-record']">Card Sales Record</a>
+        <a [routerLink] = "['/user/user-withdraw-details']">Withdraw Record</a>
+        <a (click)="resetPassword(email)">Change Password</a>
+        <a (click)="onLogout()">Sign Out</a>
+    </ng-sidebar>
+    <div ng-sidebar-content>
+        <header class="demo-header">
+            <button
+                (click)="_toggleOpened()"
+                class="demo-header__toggle"
+            >
+                Toggle sidebar
+            </button>
+            <a [routerLink] = "['/user']" style="color:#fff;">&larr; Back To Dashboard</a>
+        </header>
+        <section class="demo-contents">
+
+          <ng-content></ng-content>
+        </section>
+    </div>
+</ng-sidebar-container>

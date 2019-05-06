@@ -1,0 +1,33 @@
+<app-side-bar>
+  <section class="response">
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          Send Response
+        </div>
+        <div class="card-block">
+          <div *ngIf="currentFileUpload" class="progress" style="margin-bottom: 20px;">
+            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+              aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+              {{progress.percentage}}%</div>
+          </div>
+          <form [formGroup]="uploadForm">
+            <div class="form-group">
+              <input type="number" class="form-control" placeholder="Enter Amount" required name="amount" formControlName="amount">
+              <label for="amount">Enter Amount</label>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Reply Message" required name="message" rows="8" cols="10" formControlName="message"> </textarea>
+              <label for="message">Reply Message</label>
+            </div>
+            <div class="form-group">
+              <input type="file" (change)="selectFile($event)">
+            </div>
+            <button class="btn btn-success" (click)="confirm(uploadForm.value)">Confirm</button> &nbsp; &nbsp; 
+            <button class="btn btn-danger" (click)="decline(uploadForm.value)">Decline</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</app-side-bar>

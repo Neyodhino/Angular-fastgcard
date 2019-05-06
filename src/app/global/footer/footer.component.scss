@@ -1,0 +1,31 @@
+@import '../../../variables';
+
+footer{
+    background: $footer-bg;
+    padding: 30px;
+    color: $white;
+}
+@media only screen and (max-width: 650px){
+    footer{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .copy{
+        margin-top: 10px;
+    }
+}
+ul{
+    display: inline;
+}
+li{
+    display: inline;
+    margin-right: 15px;
+}
+a{
+    text-decoration: none;
+    transition: .5s all;
+    color: $white;
+}
+a:hover{
+    color: $light-green;
+}

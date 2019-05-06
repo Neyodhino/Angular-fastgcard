@@ -1,0 +1,78 @@
+/*
+    DEMO STYLE
+*/
+@import '../../../variables';
+
+.process{
+    text-align: center;
+}
+.requirement{
+    padding: 20px;
+    background-color: $white;
+    border-radius: 5px;
+}
+.form{
+  margin-top: 10px;
+    &_group:not(:last-child){
+        margin-bottom: 10px;
+    }
+
+    &_control{
+      width: 100%;
+      font-size: 13px;
+      padding: 15px;
+      border-radius: 2px;
+      border: 1px solid gray;
+
+      &:focus:invalid{
+        border-bottom: 3px solid #ff7730;
+      }
+    }
+    &_control:focus{
+      outline: none;
+      box-shadow: 0 16px 27px rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid #01d8da;
+    }
+    &_label{
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 12px;
+      margin-top: 7px;
+      transition: 1s all;
+    } 
+    &_control:placeholder-shown + &_label{
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-40px);
+    }
+  }
+  button{
+    margin-top: 10px;
+    width: 95%;
+    color: $white;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 100px;
+    transition: all .2s;
+    outline: none;
+    border: none;
+    background-color: $light-green;
+    cursor: pointer;
+  }
+    button:hover{ 
+    box-shadow: 0px 10px 20px rgba(0,0,0, .2);
+  }
+button:active{
+  box-shadow: 0px 5px 10px rgba(0,0,0, .2); 
+}
+.register-header{
+    font-size: 15px;
+    color: #636c72;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+.upload{
+  margin-bottom: 15px;
+}

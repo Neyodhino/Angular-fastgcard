@@ -1,0 +1,41 @@
+.heading-main{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+    letter-spacing: 4px;
+    position: relative;
+    font-size: 45px;
+}
+.heading-main::after{
+    content: "";
+    width: 100px;
+    border: 0.8px solid $light-green;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 70px;
+    left: 46.7%;
+}
+
+@media only screen and (max-width: 700px){
+    .heading-main{
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bolder;
+        letter-spacing: 4px;
+        position: relative;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .heading-main::after{
+        content: "";
+        width: 100px;
+        border: 0.8px solid $light-green;
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+        top: 38px;
+        left: 35%;
+    }
+}

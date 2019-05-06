@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+/* Material theme core goes here...*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/*All declared variables goes here */
+@import "../src/variables";
+@import "./app/animation";
+@import "./button";
+@import "../src/utilities";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body{
+    font-family: 'nato serif', 'serif';
+}

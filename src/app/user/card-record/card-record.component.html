@@ -1,0 +1,45 @@
+<app-user-side-bar>
+<div class="table-responsive">
+    <table
+        class="table table-striped table-hover"
+        style="margin-top: 20px;"
+    >
+        <thead class="thead-dark">
+            <tr>
+                <th>Ord Number</th>
+                <th>Card Type</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let card of list">
+                <td>{{card.id}}</td>
+                <td>{{card.cardType}}</td>
+                <td>{{card.date.seconds*1000 | date }}</td>
+                <td>
+                    {{card.date.seconds*1000 | date:"shortTime"}}
+                </td>
+                <ng-container *ngIf='card.status; then thenTemplate; else elseTemplate'></ng-container>
+                <ng-template #thenTemplate>
+                    <td>{{card.status}}</td>
+                </ng-template>
+                <ng-template #elseTemplate>
+                    <td>Pending</td>
+                </ng-template>
+                <td>
+                    <a
+                        [routerLink]="['/user-card-details/'+card.id]"
+                        href
+                        class="btn btn-secondary btn-sm"
+                    >
+                        Details
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</app-user-side-bar>
