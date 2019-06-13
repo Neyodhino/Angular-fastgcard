@@ -23,6 +23,7 @@ export class CardSaleDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  
     //Get cardSale id...
     this.id = this.route.snapshot.params['id'];
     //Get cardSale Details

@@ -27,10 +27,10 @@ export class AuthService {
     .signInWithPopup(provider)
     .then(res => {
       resolve(res);
+      
     })
   })
 }
-
 //send email verification when new user sign up
 sendVerificationMail(){
   return this.afAuth.auth.currentUser.sendEmailVerification()
@@ -67,31 +67,36 @@ private saveUser(value){
 }
 
 //sign it with email and password
-login(value){
-  return this.afAuth.auth.signInWithEmailAndPassword(value.email, value.password)
-  .then((result)=>{
-    if (result.user.email == 'fastgcard@yahoo.com' && result.user.emailVerified!==false) {
-      this.router.navigate(['/admin'])
-    } else if (result.user.emailVerified !== true) {
-      this.toastr.error('Please validate your email address. Kindly check your inbox.', 'Fastgcard Notification')
-    } else{
-      this.ngZone.run(()=>{
-        this.router.navigate(['/user'])
-      })
-      this.toastr.success('Welcome to your Dashboard', 'Fastgcard Notification')
+  async login(value){
+  try {
+    const result = await this.afAuth.auth.signInWithEmailAndPassword(value.email, value.password);
+    if (result.user.email == 'fastgcard@yahoo.com' && result.user.emailVerified !== false) {
+      this.router.navigate(['/admin']);
     }
-  }).catch(err=>{
-    console.log(err)
-    if (err.message =='The email address is badly formatted.') {
-      this.toastr.error('invalid email address. Please try again','Fastgcard Notification' )
-      this.router.navigate(['/sign_in'])
-    } else if( err.code == 'auth/user-not-found') {
-      this.toastr.error('User not found. Please check your sign in credentials', 'Fastgcard Notification')
-      this.router.navigate(['/sign_in'])
-    }else if(err.code == 'auth/wrong-password'){
-      this.toastr.error('Your Password is incorrect.', 'Fastgcard Notification')
+    else if (result.user.emailVerified !== true) {
+      this.toastr.error('Please validate your email address. Kindly check your inbox.', 'Fastgcard Notification');
     }
-  })
+    else {
+      this.ngZone.run(() => {
+        this.router.navigate(['/user']);
+      });
+      this.toastr.success('Welcome to your Dashboard', 'Fastgcard Notification');
+    }
+  }
+  catch (err) {
+    console.log(err);
+    if (err.message == 'The email address is badly formatted.') {
+      this.toastr.error('invalid email address. Please try again', 'Fastgcard Notification');
+      this.router.navigate(['/sign_in']);
+    }
+    else if (err.code == 'auth/user-not-found') {
+      this.toastr.error('User not found. Please check your sign in credentials', 'Fastgcard Notification');
+      this.router.navigate(['/sign_in']);
+    }
+    else if (err.code == 'auth/wrong-password') {
+      this.toastr.error('Your Password is incorrect.', 'Fastgcard Notification');
+    }
+  }
 }
 getAuth(){
   return this.afAuth.authState.pipe(auth => auth);
@@ -106,3 +111,4 @@ logout(){
   this.toastr.success('You are Logged out successfully', 'FastGcard Notification',  {positionClass: 'toast-bottom-right'});
 }
 }
+
